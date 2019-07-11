@@ -5,7 +5,7 @@ import { FiUser, FiLock } from "react-icons/fi";
 
 import Background from "../assets/background-login.jpeg";
 
-function Login(props) {
+function Login() {
   const [email, setEmail] = React.useState("mnavarro@able.co");
   const [password, setPassword] = React.useState("123456");
   const [errorMessage, setErrorMessage] = React.useState(null);
