@@ -2,13 +2,15 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { FiUser, FiLock } from "react-icons/fi";
-
+import { navigate } from "@reach/router";
 import Background from "../assets/background-login.jpeg";
+import UserContext from "../contexts/user";
 
 function Login() {
   const [email, setEmail] = React.useState("mnavarro@able.co");
   const [password, setPassword] = React.useState("123456");
   const [errorMessage, setErrorMessage] = React.useState(null);
+  const [user, setUser] = React.useState(null);
 
   function handleEmailChange(event) {
     setEmail(event.target.value);
@@ -18,8 +20,23 @@ function Login() {
     setPassword(event.target.value);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      body: JSON.stringify({ email: email, password: password }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    if (!response.ok) {
+      setErrorMessage("Usuario no existe");
+    } else {
+      const payload = await response.json();
+      setUser(payload.name);
+    }
+    navigate("/lessons");
   }
 
   const inputIconCss = {
@@ -42,120 +59,122 @@ function Login() {
   const aCss = {};
 
   return (
-    <section
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        flexDirection: "column",
-        backgroundImage: `url(${Background})`,
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover"
-      }}
-    >
-      <div
+    <UserContext.Provider value={user}>
+      <section
         css={{
           display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
           flexDirection: "column",
-          maxWidth: "90%",
-          minWidth: "20em",
-          minHeight: "10em",
-          padding: "1em",
-          backgroundColor: "white",
-          borderRadius: "5px"
+          backgroundImage: `url(${Background})`,
+          backgroundColor: "#ffffff",
+          backgroundSize: "cover"
         }}
       >
-        <h1 css={{ textAlign: "center", fontSize: "2em" }}>
-          {"{"} Codeable {"}"}
-        </h1>
-
-        <form
-          onSubmit={handleSubmit}
+        <div
           css={{
             display: "flex",
             flexDirection: "column",
-            margin: "0.5em"
+            maxWidth: "90%",
+            minWidth: "20em",
+            minHeight: "10em",
+            padding: "1em",
+            backgroundColor: "white",
+            borderRadius: "5px"
           }}
         >
-          <div css={inputIconCss}>
-            <span css={{ display: "table-cell" }}>
-              <FiUser />
-            </span>
-            <span
-              css={{ margin: "0.5em", display: "table-cell", width: "100%" }}
-            >
-              <input
-                id="email"
-                type="email"
-                name="email"
-                aria-label="email"
-                value={email}
-                onChange={handleEmailChange}
-                css={inputCss}
-                autoFocus
-              />
-            </span>
-          </div>
-          <div css={inputIconCss}>
-            <span css={{ display: "table-cell" }}>
-              <FiLock />
-            </span>
-            <span
-              css={{ margin: "0.5em", display: "table-cell", width: "100%" }}
-            >
-              <input
-                id="password"
-                type="password"
-                name="password"
-                aria-label="password"
-                value={password}
-                onChange={handlePasswordChange}
-                css={inputCss}
-              />
-            </span>
-          </div>
-          <button
+          <h1 css={{ textAlign: "center", fontSize: "2em" }}>
+            {"{"} Codeable {"}"}
+          </h1>
+
+          <form
+            onSubmit={handleSubmit}
             css={{
-              border: "none",
-              padding: "0.3em",
-              backgroundColor: "#4ea64e",
-              font: "inherit",
-              color: "#FFF",
-              fontSize: "1.3em",
-              fontWeight: "bold",
-              borderRadius: "5px",
-              maxWidth: "5em",
-              alignSelf: "center",
-              marginBottom: "16px",
-              ":hover": { backgroundColor: "#157522", cursor: "pointer" }
+              display: "flex",
+              flexDirection: "column",
+              margin: "0.5em"
             }}
           >
-            Log In
-          </button>
-          {errorMessage && (
-            <div
+            <div css={inputIconCss}>
+              <span css={{ display: "table-cell" }}>
+                <FiUser />
+              </span>
+              <span
+                css={{ margin: "0.5em", display: "table-cell", width: "100%" }}
+              >
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  aria-label="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  css={inputCss}
+                  autoFocus
+                />
+              </span>
+            </div>
+            <div css={inputIconCss}>
+              <span css={{ display: "table-cell" }}>
+                <FiLock />
+              </span>
+              <span
+                css={{ margin: "0.5em", display: "table-cell", width: "100%" }}
+              >
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  aria-label="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  css={inputCss}
+                />
+              </span>
+            </div>
+            <button
               css={{
-                color: "red",
-                textAlign: "center",
-                margin: "0.5em",
-                fontSize: "0.95em"
+                border: "none",
+                padding: "0.3em",
+                backgroundColor: "#4ea64e",
+                font: "inherit",
+                color: "#FFF",
+                fontSize: "1.3em",
+                fontWeight: "bold",
+                borderRadius: "5px",
+                maxWidth: "5em",
+                alignSelf: "center",
+                marginBottom: "16px",
+                ":hover": { backgroundColor: "#157522", cursor: "pointer" }
               }}
             >
-              Error: {errorMessage}
+              Log In
+            </button>
+            {errorMessage && (
+              <div
+                css={{
+                  color: "red",
+                  textAlign: "center",
+                  margin: "0.5em",
+                  fontSize: "0.95em"
+                }}
+              >
+                Error: {errorMessage}
+              </div>
+            )}
+            <div css={{ display: "flex", justifyContent: "space-between" }}>
+              <a href="#" css={aCss}>
+                Change Password
+              </a>
+              <a href="#" css={aCss}>
+                Forgot Password?
+              </a>
             </div>
-          )}
-          <div css={{ display: "flex", justifyContent: "space-between" }}>
-            <a href="#" css={aCss}>
-              Change Password
-            </a>
-            <a href="#" css={aCss}>
-              Forgot Password?
-            </a>
-          </div>
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
+    </UserContext.Provider>
   );
 }
 export default Login;
