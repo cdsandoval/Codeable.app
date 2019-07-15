@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: :create
 
@@ -7,10 +5,10 @@ class SessionsController < ApplicationController
     user = User.valid_login?(params[:email], params[:password])
     if user
       regenerate_and_signed_token(user)
-      render json: user
+      render json: { token: user.token }
     else
       render json: { errors: 'Incorrect email or password' },
-              status: :bad_request
+             status: :bad_request
     end
   end
 

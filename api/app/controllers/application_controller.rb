@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ApplicationController < ActionController::API
   include ActionController::Cookies
 
@@ -28,6 +26,12 @@ class ApplicationController < ActionController::API
   def regenerate_and_signed_token(user)
     user.regenerate_token
     cookies.signed[:auth_token] = { value: user.token, httponly: true }
+    user
+  end
+
+  def regenerate_and_timestamp_reset_token(user)
+    user.regenerate_reset_digest
+    user.update_attribute(:reset_sent_at, Time.zone.now)
     user
   end
 end
