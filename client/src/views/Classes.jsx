@@ -16,25 +16,35 @@ let data = [
         mainResources: [
           {
             tag: "Overview",
-            title: "Intro to Class"
+            title: "Intro to Class",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Workshop",
-            title: "Create a simple login"
+            title: "Create a simple login",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "M-Assign",
-            title: "Build a simple calculator"
+            title: "Build a simple calculator",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ],
         extraResources: [
           {
             tag: "Exercises",
-            title: "Practice"
+            title: "Practice",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Blog",
-            title: "Blog"
+            title: "Blog",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ]
       },
@@ -43,15 +53,21 @@ let data = [
         mainResources: [
           {
             tag: "Overview",
-            title: "Intro to Class"
+            title: "Intro to Class",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Workshop",
-            title: "Create a simple login"
+            title: "Create a simple login",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "M-Assign",
-            title: "Build a simple calculator"
+            title: "Build a simple calculator",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ],
         extraResources: [
@@ -61,7 +77,9 @@ let data = [
           },
           {
             tag: "Blog",
-            title: "Blog"
+            title: "Blog",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ]
       },
@@ -70,25 +88,35 @@ let data = [
         mainResources: [
           {
             tag: "Overview",
-            title: "Intro to Class"
+            title: "Intro to Class",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Workshop",
-            title: "Create a simple login"
+            title: "Create a simple login",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "M-Assign",
-            title: "Build a simple calculator"
+            title: "Build a simple calculator",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ],
         extraResources: [
           {
             tag: "Exercises",
-            title: "Practice"
+            title: "Practice",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Blog",
-            title: "Blog"
+            title: "Blog",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ]
       }
@@ -103,25 +131,35 @@ let data = [
         mainResources: [
           {
             tag: "Overview",
-            title: "Intro to Class"
+            title: "Intro to Class",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Workshop",
-            title: "Create a simple login"
+            title: "Create a simple login",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "M-Assign",
-            title: "Build a simple calculator"
+            title: "Build a simple calculator",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ],
         extraResources: [
           {
             tag: "Exercises",
-            title: "Practice"
+            title: "Practice",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Blog",
-            title: "Blog"
+            title: "Blog",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ]
       },
@@ -130,25 +168,35 @@ let data = [
         mainResources: [
           {
             tag: "Overview",
-            title: "Intro to Class"
+            title: "Intro to Class",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Workshop",
-            title: "Create a simple login"
+            title: "Create a simple login",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "M-Assign",
-            title: "Build a simple calculator"
+            title: "Build a simple calculator",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ],
         extraResources: [
           {
             tag: "Exercises",
-            title: "Practice"
+            title: "Practice",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Blog",
-            title: "Blog"
+            title: "Blog",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ]
       },
@@ -157,25 +205,35 @@ let data = [
         mainResources: [
           {
             tag: "Overview",
-            title: "Intro to Class"
+            title: "Intro to Class",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Workshop",
-            title: "Create a simple login"
+            title: "Create a simple login",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "M-Assign",
-            title: "Build a simple calculator"
+            title: "Build a simple calculator",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ],
         extraResources: [
           {
             tag: "Exercises",
-            title: "Practice"
+            title: "Practice",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           },
           {
             tag: "Blog",
-            title: "Blog"
+            title: "Blog",
+            content:
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae harum eaque rerum quasi dolor obcaecati perspiciatis deserunt tempora! Consectetur error provident officiis quis molestias laudantium blanditiis officia, doloremque soluta fugiat."
           }
         ]
       }
@@ -191,8 +249,8 @@ function Class() {
   return (
     <div css={{ backgroundColor: "#eee", height: "100vh" }}>
       <Header />
-      {data.map(value => {
-        return <Module module={value} />;
+      {data.map((value, i) => {
+        return <Module module={value} index={i} />;
       })}
     </div>
   );

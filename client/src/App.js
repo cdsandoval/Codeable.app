@@ -5,6 +5,7 @@ import { jsx } from "@emotion/core";
 import Classes from "./views/Classes";
 import { Router } from "@reach/router";
 import Forgot from "./views/Forgot";
+import Lesson from "./views/Lesson";
 
 function App() {
   const container = {
@@ -14,7 +15,8 @@ function App() {
     <div css={container}>
       <Router>
         <Login path="/" />
-        <Classes path="/lessons" />
+        <Classes path="lessons" />
+        <Lesson path="lessons/sublesson/:index/:title" />
         <Forgot path="/forgot" />
       </Router>
     </div>
