@@ -1,0 +1,2 @@
+class MiniAssigmentsController < ApplicationController
+end

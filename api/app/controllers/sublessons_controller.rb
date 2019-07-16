@@ -1,0 +1,2 @@
+class SublessonsController < ApplicationController
+end
