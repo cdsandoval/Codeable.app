@@ -9,6 +9,7 @@ import { Card, Input, Button, Label } from "../components/Ui";
 function Forgot() {
   function handleSubmit(e) {
     e.preventDefault();
+    navigate("/resetconfirm");
     console.log(e);
   }
 
@@ -60,9 +61,7 @@ function Forgot() {
 
             <Input name="email" type="email" placeholder="Email" />
 
-            <Link to="/resetconfirm">
-              <Button css={{ width: "100%", height: "100%" }}>Submit</Button>
-            </Link>
+            <Button>Submit</Button>
           </div>
         </form>
       </Card>

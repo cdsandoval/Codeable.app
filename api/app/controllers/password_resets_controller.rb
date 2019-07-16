@@ -8,10 +8,10 @@ class PasswordResetsController < ApplicationController
     if @user
       regenerate_and_timestamp_reset_token(@user)
       @user.send_password_reset_email
-      render json: "Email sent with password reset instructions"
-      # redirect_to root_url
+      render json: { message: 'Email sent with password reset instructions' }
     else
-      render json: 'Email address not found'
+      render json: { errors: 'Email address not found' },
+             status: :bad_request
     end
   end
 

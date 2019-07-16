@@ -4,8 +4,8 @@ import { jsx } from "@emotion/core";
 import { FiUser, FiLock } from "react-icons/fi";
 import { navigate, Link } from "@reach/router";
 import Background from "../assets/background-login.jpeg";
-import { useLogin } from "../action-hook";
-import { useUser } from "../selector";
+import { useLogin } from "../redux/action-hook";
+import { useUser } from "../redux/selector";
 import { Card, Input, Button, Label } from "../components/Ui";
 
 

@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import Module from "../components/Module";
 import { Redirect } from "@reach/router";
-import { useUser } from "../selector";
+import { useUser } from "../redux/selector";
 import Header from "../components/Header";
 
 let data = [
@@ -185,6 +185,7 @@ let data = [
 
 function Class() {
   const username = useUser();
+  console.log(username);
 
   if (!username) return <Redirect to="/" noThrow />;
 

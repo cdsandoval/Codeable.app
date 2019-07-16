@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
-
-const initialState = {
-  user: { currentUser: {}, loading: false, error: null }
-};
+import initialState from "./initialState"
 
 function userReducer(state = initialState.user, action = {}) {
   switch (action.type) {
+
     case "LOGIN_REQUEST": {
       return {
         ...state,

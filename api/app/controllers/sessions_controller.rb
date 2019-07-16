@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.valid_login?(params[:email], params[:password])
     if user
       regenerate_and_signed_token(user)
-      render json: { token: user.token }
+      render json: user
     else
       render json: { errors: 'Incorrect email or password' },
              status: :bad_request
