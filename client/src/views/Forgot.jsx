@@ -9,14 +9,6 @@ function Forgot() {
     console.log(e);
   }
 
-  const inputCss = {
-    fontSize: "1em",
-    border: "none",
-    outline: "none",
-    paddingLeft: "1em",
-    width: "calc(100% - 1em)"
-  };
-
   return (
     <div
       css={{
