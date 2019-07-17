@@ -6,6 +6,7 @@ import Login from "./views/Login";
 import Classes from "./views/Classes";
 import Forgot from "./views/Forgot";
 import ResetConfirmation from "./views/ResetConfirmation";
+import ResetPassword from "./views/ResetPassword";
 
 function App() {
   const container = {
@@ -18,6 +19,7 @@ function App() {
         <Classes path="/lessons" />
         <Forgot path="/forgot" />
         <ResetConfirmation path="/resetconfirm" />
+        <ResetPassword path="/resetpassword/:token" />
       </Router>
     </div>
   );

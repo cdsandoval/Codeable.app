@@ -1,11 +1,17 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import Background from "../assets/background-login.jpeg";
-import { Link } from "@reach/router";
-import { Card, Input, Button, Label } from "../components/Ui";
+import { navigate, Link } from "@reach/router";
 
-function ResetConfirmation() {
+import Background from "../assets/background-login.jpeg";
+import { Card, Input, Button, Label } from "../components/Ui";
+// import { sendResetEmail } from "../services/resetPassword";
+
+function ResetPassword() {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <div
       css={{
@@ -23,12 +29,12 @@ function ResetConfirmation() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "center",
           width: "500px",
           height: "300px"
         }}
       >
-        <div
+        <form
           css={{
             width: "100%",
             height: "100%",
@@ -36,35 +42,31 @@ function ResetConfirmation() {
             flexDirection: "column",
             justifyContent: "space-between"
           }}
+          onSubmit={handleSubmit}
         >
-          <h2>Reset your password</h2>
+          <h2>Change your password</h2>
           <div
             css={{
               height: "70%",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-around"
+              justifyContent: "space-between"
             }}
           >
-            <p>
-              We have sent a reset password email to{" "}
-              <b>ry.yrupailla@gmail.com</b>. Please click the reset password
-              link to set your new password.
-            </p>
+            <p>Dont't worry, reset your password is easy.</p>
 
-            <p>
-              Didn't receive the email yet? <br /> Please check your spam folder
-              or{" "}
-              <Link to="/forgot" css={{ color: "rgb(0,200,100)" }}>
-                resend
-              </Link>{" "}
-              the email.{" "}
-            </p>
+            <Input name="password" type="password" placeholder="Password" />
+            <Input
+              name="password-confirm"
+              type="password-confirm"
+              placeholder="Confirm Password"
+            />
+            <Button>Submit</Button>
           </div>
-        </div>
+        </form>
       </Card>
     </div>
   );
 }
 
-export default ResetConfirmation;
+export default ResetPassword;

@@ -12,9 +12,8 @@ function Forgot() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await sendResetEmail(e.target.elements.email.value);
-    if (response.errors) setError(response.errors);
-    else navigate("/resetconfirm");
+    sendResetEmail(e.target.elements.email.value);
+    navigate("/resetconfirm");
   }
 
   return (
