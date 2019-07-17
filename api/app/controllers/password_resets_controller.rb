@@ -1,10 +1,12 @@
 class PasswordResetsController < ApplicationController
+  skip_before_action :require_login
+
   def new
     render json: 'hola bebe'
   end
 
   def create
-    @user = User.find_by(email: params['password_reset']['email'].downcase)
+    @user = User.find_by(email: params[:email].downcase)
     if @user
       regenerate_and_timestamp_reset_token(@user)
       @user.send_password_reset_email

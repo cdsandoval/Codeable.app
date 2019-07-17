@@ -5,12 +5,13 @@ import { navigate, Link } from "@reach/router";
 
 import Background from "../assets/background-login.jpeg";
 import { Card, Input, Button, Label } from "../components/Ui";
+import { sendResetEmail } from "../services/resetPassword";
 
 function Forgot() {
   function handleSubmit(e) {
     e.preventDefault();
+    sendResetEmail(e.target.elements.email.value);
     navigate("/resetconfirm");
-    console.log(e);
   }
 
   return (
