@@ -5,11 +5,38 @@ import { navigate, Link } from "@reach/router";
 
 import Background from "../assets/background-login.jpeg";
 import { Card, Input, Button, Label } from "../components/Ui";
-// import { sendResetEmail } from "../services/resetPassword";
+import { resetPassword } from "../services/resetPassword";
 
-function ResetPassword() {
-  function handleSubmit(e) {
+function ResetPassword({ token }) {
+  const [password, setPassword] = React.useState("");
+  const [confirm, setConfirm] = React.useState("");
+  const [error, setError] = React.useState();
+
+  async function handleSubmit(e) {
     e.preventDefault();
+    if (password === confirm) {
+      await resetPassword(password, token);
+      navigate("/resetsuccessful");
+    }
+
+  }
+
+  function handlePasswordChange(e) {
+    setPassword(e.target.value);
+    if (e.target.value.length < 6) {
+      setError("Password should have more than six characters");
+    } else {
+      setError(null);
+    }
+  }
+
+  function handleConfirmChange(e) {
+    setConfirm(e.target.value);
+    if (password !== e.target.value) {
+      setError("Password should match");
+    } else {
+      setError(null);
+    }
   }
 
   return (
@@ -31,7 +58,7 @@ function ResetPassword() {
           alignItems: "center",
           justifyContent: "center",
           width: "500px",
-          height: "300px"
+          height: "400px"
         }}
       >
         <form
@@ -55,12 +82,30 @@ function ResetPassword() {
           >
             <p>Dont't worry, reset your password is easy.</p>
 
-            <Input name="password" type="password" placeholder="Password" />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={handlePasswordChange}
+            />
+
             <Input
               name="password-confirm"
-              type="password-confirm"
+              type="password"
               placeholder="Confirm Password"
+              onChange={handleConfirmChange}
             />
+            <div
+              css={{
+                color: "red",
+                textAlign: "center",
+                margin: "0.5em",
+                fontSize: "0.95em",
+                height: "30px"
+              }}
+            >
+              {error}
+            </div>
             <Button>Submit</Button>
           </div>
         </form>
