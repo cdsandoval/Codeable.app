@@ -2,7 +2,7 @@ class ModulosController < ApplicationController
   before_action :set_modulo, only: [:show]
 
     def index
-      @modulos = Modulo.all
+      @modulos = Modulo.includes(:lessons)
       render json: {
         status: 'SUCCESS',
         message: 'Loaded Modulos',
@@ -24,3 +24,9 @@ class ModulosController < ApplicationController
     end
 
 end
+
+
+# /modulos/:id/lessons
+# intro to RUBY_COPYRIGHT
+# GIT commands
+# classes
