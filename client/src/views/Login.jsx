@@ -8,20 +8,17 @@ import { useLogin } from "../redux/action-hook";
 import { useUser } from "../redux/selector";
 import { Card, Input, Button, Label } from "../components/Ui";
 
-
 function Login() {
   const login = useLogin();
-  const username = useUser();
+  const user = useUser();
   const [email, setEmail] = React.useState("mnavarro@able.co");
   const [password, setPassword] = React.useState("123456");
-  const [errorMessage, setErrorMessage] = React.useState(null);
-  const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
-    if (username) {
+    if (user.currentUser.name) {
       navigate("/lessons");
     }
-  }, [username]);
+  }, [user]);
 
   function handleEmailChange(event) {
     setEmail(event.target.value);
@@ -148,7 +145,7 @@ function Login() {
           >
             Log In
           </button>
-          {errorMessage && (
+          {user.error && (
             <div
               css={{
                 color: "red",
@@ -157,7 +154,7 @@ function Login() {
                 fontSize: "0.95em"
               }}
             >
-              Error: {errorMessage}
+              Error: {user.error}
             </div>
           )}
 

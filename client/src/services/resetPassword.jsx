@@ -9,15 +9,8 @@ async function sendResetEmail(email) {
       "Content-Type": "application/json"
     }
   });
-
-  const payload = await response.json();
-
-  if (!response.ok) {
-    console.log("la cagaste");
-    throw new Error(payload.errors);
-  }
-
-  return payload;
+  
+  return await response.json();
 }
 
 export { sendResetEmail };

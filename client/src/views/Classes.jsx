@@ -184,10 +184,10 @@ let data = [
 ];
 
 function Class() {
-  const username = useUser();
-  console.log(username);
+  const user = useUser();
+  console.log(user);
 
-  if (!username) return <Redirect to="/" noThrow />;
+  if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
   return (
     <div css={{ backgroundColor: "#eee", height: "100vh" }}>

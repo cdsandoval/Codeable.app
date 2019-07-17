@@ -8,10 +8,13 @@ import { Card, Input, Button, Label } from "../components/Ui";
 import { sendResetEmail } from "../services/resetPassword";
 
 function Forgot() {
-  function handleSubmit(e) {
+  const [error, setError] = React.useState(null);
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    sendResetEmail(e.target.elements.email.value);
-    navigate("/resetconfirm");
+    const response = await sendResetEmail(e.target.elements.email.value);
+    if (response.errors) setError(response.errors);
+    else navigate("/resetconfirm");
   }
 
   return (
@@ -61,6 +64,19 @@ function Forgot() {
             </p>
 
             <Input name="email" type="email" placeholder="Email" />
+
+            {error && (
+              <div
+                css={{
+                  color: "red",
+                  textAlign: "center",
+                  margin: "0.5em",
+                  fontSize: "0.95em"
+                }}
+              >
+                Error: {error}
+              </div>
+            )}
 
             <Button>Submit</Button>
           </div>
